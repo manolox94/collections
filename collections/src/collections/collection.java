@@ -1,6 +1,7 @@
 package collections;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedList;
@@ -11,8 +12,8 @@ import java.util.Vector;
 public class collection {
 	public static void main(String args[]){
 		  
-		TreSet();
-
+//		hashSet();
+		insertionOrder(); 
 
 	}
 	// LIST
@@ -108,9 +109,12 @@ public class collection {
 		HashSet al=new HashSet(); // creating hashSet
 		al.add("Rachit");                 // adding elements
 		al.add("Amit");
-		al.add("jack");
-		
-		
+		al.add("dack");
+		al.add(null);
+
+
+		System.out.println(al);
+
 		al.remove("Amit");
 		System.out.println(al.iterator());
 		System.out.println(al.isEmpty());
@@ -155,5 +159,45 @@ public class collection {
 			System.out.println(itr.next());
 		}
 	}
+	
+    private static void insertionOrder() 
+    { 
+        java.util.LinkedHashSet<String> geekLinkSet 
+            = new java.util.LinkedHashSet<>(); 
+        TreeSet<String> geekTreeSet 
+            = new TreeSet<>(); 
+        HashSet<String> geekHashSet 
+            = new HashSet<String>(); 
+  
+        // Add three object in 
+        // LinkedHashSet and TreeSet 
+        for (String str : Arrays.asList("Geek2", 
+                                        "Geek1", 
+                                        "Geek3", 
+                                        "Geek1")) { 
+  
+            geekLinkSet.add(str); 
+            geekTreeSet.add(str); 
+            geekHashSet.add(str); 
+        } 
+  
+        // should be sorted order HashSet 
+        // stores element in sorted order 
+        System.out.println("Insertion Order"
+                           + " of objects in HashSet :"
+                           + geekHashSet); 
+  
+        // insertion order or elements LinkedHashSet 
+        // storeds elements as insertion 
+        System.out.println("Insertion Order of "
+                           + "objects in LinkedHashSet :"
+                           + geekLinkSet); 
+  
+        // should be sorted order TreeSet 
+        // stores element in sorted order 
+        System.out.println("Insertion Order of"
+                           + " objects in TreeSet :"
+                           + geekTreeSet); 
+    } 
 	
 }
